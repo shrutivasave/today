@@ -31,4 +31,4 @@
 1. Clone the repository
 2. cd today
 3. npm install
-4. expo start
+4. expo start ---> at this point you can use the expo go app to view "today" in your phone!
