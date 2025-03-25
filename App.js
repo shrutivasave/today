@@ -5,6 +5,8 @@ import * as Font from "expo-font";
 import Home from "./components/Home"; 
 import UserDayScreen from "./components/UserDayScreen";
 import Today from "./components/Today";
+import Calendar from "./components/Calendar";
+import CalendarDay from "./components/CalendarDay";
 
 // Load custom fonts
 const loadFonts = async () => {
@@ -27,7 +29,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <UserDayScreen />
+      <Calendar />
+      {/* <UserDayScreen /> */}
     </View>
   );
 }
