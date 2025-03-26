@@ -13,21 +13,24 @@ import CalendarDay from './CalendarDay';
 import { formatISO } from 'date-fns';
 import { transformImagesToCalendarData } from '../CalendarUtils';
 
-// Dummy data - replace with your actual image data
+
 const dummyImages = [
   { 
     creationTime: new Date('2024-03-15').getTime(), 
     id: 'image1', 
     uri: 'https://commons.wikimedia.org/wiki/File:Sunflower_from_Silesia2.jpg' 
   },
-  // Add more dummy images
+
 ];
 
 const Calendar = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const screenWidth = Dimensions.get('window').width;
-  const dayWidth = Math.floor((screenWidth - 2) / 7);
-  const dayHeight = Math.floor((dayWidth * 4) / 3);
+/*   const dayWidth = Math.floor((screenWidth - 2) / 7);
+  const dayHeight = Math.floor((dayWidth * 4) / 3); */
+  const dayWidth = Math.floor(screenWidth / 7) - 4; // Ensure spacing
+  const dayHeight = Math.floor(dayWidth * 1.2); // Maintain aspect ratio
+
 
   const listRef = useRef(null);
 
@@ -56,6 +59,8 @@ const Calendar = () => {
   );
 
   return (
+    
+
     <View style={styles.container}>
       <FlashList
         data={calendarData}
@@ -90,6 +95,7 @@ const Calendar = () => {
         </View>
       </Modal>
     </View>
+    
   );
 };
 
@@ -99,12 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   listContainer: {
-    paddingHorizontal: 600,
+    alignItems:'center',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
   },
   modalContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    width: '100%',
     backgroundColor: 'rgba(0,0,0,0.7)',
   },
   modalBackground: {

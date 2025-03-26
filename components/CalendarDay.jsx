@@ -8,7 +8,7 @@ const CalendarDay = ({
   dayHeight, 
   onImagePress 
 }) => {
-  const sizeStyle = { width: dayWidth, height: dayHeight };
+  const sizeStyle = { width: dayWidth, height: dayHeight};
 
   switch (item.type) {
     case 'blank':
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
   dayContainer: {
     alignItems: 'center',
     justifyContent: 'center',
+    flexWrap: 'wrap',
   },
   imageWrapper: {
     position: 'relative',
